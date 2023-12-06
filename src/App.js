@@ -87,7 +87,7 @@ const App = () => {
      <input placeholder="R$ 0,00" className='entrada' type="number" value= { valorbruto } onChange={(e) => setValorBruto (e.target.value)}/>
 
      <h1 className='entrada'>Valor Líquido </h1>  
-     <input   placeholder="R$ 0,00" className='entrada' type="number" value= { valorliq } onChange={(e) => setValorLiq (e.target.value)}/>
+     <input   placeholder="R$ 0,00" className='entrada' type="number" value= { valorliquido } onChange={(e) => setvalorLiquido (e.target.value)}/>
 
     </div>
   );
