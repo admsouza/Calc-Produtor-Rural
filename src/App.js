@@ -1,6 +1,7 @@
 
-import React, {useState} from 'react'
-// import FormatNumber from './FormatNumber';
+import React, {useState,} from 'react'
+
+
 
 import './App.css';
 
@@ -8,14 +9,14 @@ const App = () => {
 
   // Calculo RAT
 
-    const [valorbruto,setValorBruto] = useState (null )
-    const [resultrat, setResultRat] = useState (null )
-    const [resultsenar, setResultSenar] = useState (null)
-    const [resultinss, setResultInss] = useState (null)
-    const [valorliquido, setvalorLiquido] = useState (null)
-    const [valorliq, setValorLiq] = useState (null)
-    // const [mostrarliquidio, setmostrarLiquido] = useState (null)
+    const [valorbruto,setValorBruto] = useState (null)
+    const [resultrat, setResultRat] = useState ()
+    const [resultsenar, setResultSenar] = useState ()
+    const [resultinss, setResultInss] = useState ()
+    const [valorliquido, setvalorLiquido] = useState ()
+    const [valorliq, setValorLiq] = useState ()
 
+      
     const calcular = () => {
       const rat = valorbruto * 0.01
       const formatrat = rat.toFixed(2)
@@ -23,6 +24,7 @@ const App = () => {
       const formatvalorbruto = valorbruto.toFixed(2)
       setValorBruto(+formatvalorbruto)
       
+
     }
  
     const calcularSenar = () => {
@@ -38,27 +40,30 @@ const App = () => {
 
     }
 
+    const vlLiq= () => {
+
+      const liq = valorbruto - (resultinss + resultrat +resultsenar)
+      const formatLiq = liq.toFixed(2)
+      setValorLiq(+formatLiq)
+
+    }
+
       const valorLiquido = () => {
         const liquido =  valorbruto - (resultrat + resultinss +  resultsenar)
         const formatliquido = liquido.toFixed(2)
           setvalorLiquido(+formatliquido) 
     }
 
-      const vlLiq= () => {
-
-        const liq = valorbruto - resultinss - resultrat - resultsenar
-        const formatLiq = liq.toFixed
-        setValorLiq(+formatLiq)
-
-      }
+ 
     
     const calcFinal = () => {
 
           calcular()
           calcularSenar()
           calcularInss()
-          valorLiquido()
           vlLiq()
+          valorLiquido()
+          
           
 
     }
@@ -66,28 +71,28 @@ const App = () => {
 
   return (
 
-    <div className="App">
+    <div  className="App">
 
       <h1>Cálculo - Produtor Rural</h1>
-      <label className='name'>Valor Recebido</label>
 
-      <input  placeholder="R$ 0,00" onBlur={calcFinal}   className='' type="number" value={valorbruto} onChange={(e) => setValorBruto (+e.target.value)}/>
+      <label  className='name'>Valor Recebido</label>
+        <input  required  placeholder="R$ 0,00" onBlur={ calcFinal }   className='' type="number" value={valorbruto} onChange={(e) => setValorBruto (+e.target.value)}/>
 
       <label className='name' >RAT 1% </label>
-      <input  placeholder="R$ 0,00" className='' type="number" value= { resultrat  } onChange={(e) => setResultRat (e.target.value)}/>
+        <input  disabled   onBlur ={vlLiq} placeholder="R$ 0,00" className='' type="number" value= { resultrat  } onChange={(e) => setResultRat (e.target.value)}/>
   
       <label className='name'>SENAR 2% </label>
-      <input   placeholder="R$ 0,00" className='' type="number" value= { resultsenar  } onChange={(e) => setResultSenar (e.target.value)}/>
+        <input  disabled placeholder="R$ 0,00" className='' type="number" value= { resultsenar  } onChange={(e) => setResultSenar (e.target.value)}/>
 
       <label className='name'> INSS 12% </label>
-      <input   placeholder="R$ 0,00" className='' type="number" value= { resultinss } onChange={(e) => setResultInss (e.target.value)}/>
+        <input disabled  placeholder="R$ 0,00" className='' type="number" value= { resultinss } onChange={(e) => setResultInss (e.target.value)}/>
       
       
       <h1 className='entrada'>Base de Calculo</h1>  
-     <input placeholder="R$ 0,00" className='entrada' type="number" value= { valorbruto } onChange={(e) => setValorBruto (e.target.value)}/>
+        <input disabled placeholder="R$ 0,00" className='entrada' type="number" value= { valorbruto } onChange={(e) => setValorBruto (e.target.value)}/>
 
      <h1 className='entrada'>Valor Líquido </h1>  
-     <input   placeholder="R$ 0,00" className='entrada' type="number" value= { valorliquido } onChange={(e) => setvalorLiquido (e.target.value)}/>
+        <input disabled  placeholder="R$ 0,00" className='entrada' type="number" value= { valorliq } onChange={(e) => setValorLiq (e.target.value)}/>
 
     </div>
   );
