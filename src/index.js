@@ -7,12 +7,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 import reportWebVitals from './reportWebVitals';
-import App from './App';
+import ProdutorRural from './Mod-Rural/ProdutorRural';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App/>
+    <ProdutorRural/>
    
   </React.StrictMode>
 );
