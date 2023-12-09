@@ -108,6 +108,7 @@ h1{
 .boxvalorliquido > input:focus{
     width: 150%;
     align-items: center;
+
    
 
 
@@ -135,7 +136,7 @@ border-color: red; /* Cor da borda (vermelho) */
   
 }
 .boxsenar > input{
-    padding-le:1px ;
+    padding-left:1px ;
 }
 .boxinss >input{
     padding:1px
