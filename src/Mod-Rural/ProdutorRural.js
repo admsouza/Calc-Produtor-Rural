@@ -120,7 +120,7 @@ const ProdutorRural = () => {
       
 <div className="boxvalorliquido">
       <label className="entrada">
-        <h1 className="vl">Valor Líquido (R$) = </h1>
+        <h1 className="vl'">Valor Líquido (R$) = </h1>
       </label>
       <input
         className="valorliquido"
