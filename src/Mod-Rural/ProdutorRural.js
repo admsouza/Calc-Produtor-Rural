@@ -1,12 +1,8 @@
 import React, { useState, useRef } from "react";
 
-
 import "./Rural.css";
 
-
-
 const ProdutorRural = () => {
- 
   const [valorbruto, setValorBruto] = useState(null);
   const [resultrat, setResultRat] = useState(null);
   const [resultsenar, setResultSenar] = useState(null);
@@ -52,7 +48,6 @@ const ProdutorRural = () => {
     vlLiq();
     valorLiquido();
   };
-  
 
   return (
     <div className="App">
@@ -68,77 +63,67 @@ const ProdutorRural = () => {
           type="number"
           value={valorbruto}
           onChange={(e) => setValorBruto(+e.target.value)}
-    
         />
-
       </div>
-  
-
-
-    <div className="boxcalculadora">
-
-    <div className="boxbase">
-        <label className="name">Base de Cálculo (R$) = </label>
+       <label className="entrada">
+          <h1 className="vl'">Valor Líquido (R$)</h1>
+        </label>
         <input
-          onBlur={vlLiq}
+          className="valorliquido"
+          disabled
           placeholder="R$ 0,00"
-          className="base"
           type="number"
-          value={valorbruto}
-          onChange={(e) => setValorBruto(e.target.value)}
+          value={valorliq}
+          onChange={(e) => setValorLiq(e.target.value)}
+          id="reset"
         />
-        
-      </div>
-      <div  className="boxsenar">
-      <label className="name">SENAR 2% = </label>
-      <input
-        disabled
-        placeholder="R$ 0,00"
-        className=""
-        type="number"
-        value={resultsenar}
-        onChange={(e) => setResultSenar(e.target.value)}
-      />
-      </div>
+      <div className="boxcalculadora">
+        <div className="boxbase">
+          <label className="name">Base de Cálculo (R$) = </label>
+          <input
+            onBlur={vlLiq}
+            placeholder="R$ 0,00"
+            className="base"
+            type="number"
+            value={valorbruto}
+            onChange={(e) => setValorBruto(e.target.value)}
+          />
+        </div>
+        <div className="boxsenar">
+          <label className="name">SENAR 2% = </label>
+          <input
+            disabled
+            placeholder="R$ 0,00"
+            className=""
+            type="number"
+            value={resultsenar}
+            onChange={(e) => setResultSenar(e.target.value)}
+          />
+        </div>
 
-  <div className="boxinss">
-    
-      <label className="name"> INSS 12%  (R$) = </label>
-      <input
-        disabled
-        placeholder="R$ 0,00"
-        className=""
-        type="number"
-        value={resultinss}
-        onChange={(e) => setResultInss(e.target.value)}
-      />
-</div>
-  <div className="boxrat">
-      <label className="name">RAT 1%  (R$) =</label>
-      <input
-      className=""
-        disabled
-        placeholder="R$ 0,00"
-        type="number"
-        value={resultrat}
-        onChange={(e) => setResultRat (e.target.value)}
-      />
-</div>     
-</div>
-<div className="boxvalorliquido">
-      <label className="entrada">
-        <h1 className="vl'">Valor Líquido (R$)</h1>
-      </label>
-      <input
-        className="valorliquido"
-        disabled
-        placeholder="R$ 0,00"
-        type="number"
-        value={valorliq}
-        onChange={(e) => setValorLiq(e.target.value)}
-        id="reset"
-      />
-</div>
+        <div className="boxinss">
+          <label className="name"> INSS 12% (R$) = </label>
+          <input
+            disabled
+            placeholder="R$ 0,00"
+            className=""
+            type="number"
+            value={resultinss}
+            onChange={(e) => setResultInss(e.target.value)}
+          />
+        </div>
+        <div className="boxrat">
+          <label className="name">RAT 1% (R$) =</label>
+          <input
+            className=""
+            disabled
+            placeholder="R$ 0,00"
+            type="number"
+            value={resultrat}
+            onChange={(e) => setResultRat(e.target.value)}
+          />
+        </div>
+      </div>
     </div>
   );
 };

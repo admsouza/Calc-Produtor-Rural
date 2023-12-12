@@ -1,14 +1,17 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+body{
+    background-color: black;
+}
+
+
 h1{
     color: bisque;
+   padding-top: 3%;
+   
 }
 
 
 
-}
+
 .App{
     display: flex;
     justify-content: center;
@@ -23,33 +26,22 @@ h1{
  input{
     width: 100px;
     text-align: center;
-    /* background-color: chocolate; */
     border: none;
     padding-left: 10px ;
-    /* margin-left: px; */
-    /* align-items: flex-end */
     color: black;
-   
+  
    
     
  }
- button{
-    padding: 5px;
-    margin-top: 5%;
-
- }
- 
-    
- 
-
+   
  .vlrecebido{
-   margin-bottom: 10%;
-   margin-top: 10%;
+   margin-bottom: 1%;
+   margin-top: 5%;
    color: green;
    
 }
 .vlrecebido>label{
-   padding-left: 23px;
+   padding-left: 31px;
    font-weight: bold;
 
 }
@@ -62,39 +54,15 @@ h1{
 }
 
 
-
-/* Foramtação valor recebido */
-
-.boxcalculadora{
-    padding-right:15%;
-}
-
-
-
 .recebido{
     padding: 5%;
     margin-bottom: 5px;
     display: block;
    padding-left: 0%;
    width: max-content;
-  
-   font-weight: bold;
-
-
-
-
-
-    /* Formatação vlaor líquido*/
+   font-weight: bold; 
 }
-.boxvalorliquido{
-    width: 100%;
-    
-    padding: 10%;
-    margin-bottom: 5px;
-    display: block;
-   padding-left: 35%;
 
-}
 .valorliquido{
     width: 65%;
     height: 50px;
@@ -103,27 +71,21 @@ h1{
     background-color: black;
     color: aquamarine;
     font-weight: bold;
-}
-
-.boxvalorliquido > input:focus{
-    width: 150%;
-    align-items: center;
-
-   
-
+    padding:0px ;
+    padding-left: 25px;
 
 }
 
 .boxcalculadora{
-    background-color: black;
-  color: bisque;
-   height: 150px;
-   padding: 30px;
-  margin-top: 1px;
+background-color: black;
+color: bisque;
+height: 100px;
+padding: 30px;
+margin-top: 1px;
 margin-left: 25px;
-border-width: 3px; /* Largura da borda */
-border-style: dashed; /* Estilo da borda (pontilhada) */
-border-color: red; /* Cor da borda (vermelho) */
+border-width: 3px; 
+border-style: dashed; 
+border-color: red;
 }
 
 
