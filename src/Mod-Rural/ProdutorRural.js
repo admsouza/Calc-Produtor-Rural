@@ -3,12 +3,12 @@ import React, { useState, useRef } from "react";
 import "./Rural.css";
 
 const ProdutorRural = () => {
-  const [valorbruto, setValorBruto] = useState(null);
-  const [resultrat, setResultRat] = useState(null);
-  const [resultsenar, setResultSenar] = useState(null);
-  const [resultinss, setResultInss] = useState(null);
-  const [valorliquido, setvalorLiquido] = useState(null);
-  const [valorliq, setValorLiq] = useState(null);
+  const [valorbruto, setValorBruto] = useState();
+  const [resultrat, setResultRat] = useState();
+  const [resultsenar, setResultSenar] = useState();
+  const [resultinss, setResultInss] = useState();
+  const [valorliquido, setvalorLiquido] = useState();
+  const [valorliq, setValorLiq] = useState();
 
   const calcular = () => {
     const rat = valorbruto * 0.01;
@@ -18,13 +18,18 @@ const ProdutorRural = () => {
     setValorBruto(+formatvalorbruto);
   };
 
+  function Limpar(){
+    const campo = document.querySelector('#campo');
+    campo.value = '';
+  }
+
   const calcularSenar = () => {
     const senar = valorbruto * 0.02;
     const formatsenar = senar.toFixed(2);
     setResultSenar(+formatsenar);
   };
   const calcularInss = () => {
-    const inss = valorbruto * 0.12;
+    const inss = valorbruto * 0.012;
     const formatinss = inss.toFixed(2);
     setResultInss(+formatinss);
   };
@@ -102,7 +107,7 @@ const ProdutorRural = () => {
         </div>
 
         <div className="boxinss">
-          <label className="name"> INSS 12% (R$) = </label>
+          <label className="name"> INSS 1.2% (R$) = </label>
           <input
             disabled
             placeholder="R$ 0,00"
