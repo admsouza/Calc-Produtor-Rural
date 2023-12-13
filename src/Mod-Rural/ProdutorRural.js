@@ -1,6 +1,6 @@
-import React, { useState, useRef } from "react";
-
+import React, { useState,  } from "react";
 import "./Rural.css";
+
 
 const ProdutorRural = () => {
   const [valorbruto, setValorBruto] = useState();
@@ -18,10 +18,6 @@ const ProdutorRural = () => {
     setValorBruto(+formatvalorbruto);
   };
 
-  function Limpar(){
-    const campo = document.querySelector('#campo');
-    campo.value = '';
-  }
 
   const calcularSenar = () => {
     const senar = valorbruto * 0.02;
@@ -53,12 +49,17 @@ const ProdutorRural = () => {
     vlLiq();
     valorLiquido();
   };
-
+  
+ 
+    
   return (
-    <div className="App">
-      <h1>Cálculo - Produtor Rural</h1>
 
+ 
+    <div className="App">
+        
+      <h1>Cálculo - Produtor Rural</h1>
       <div className="vlrecebido">
+      
         <label className="recebido">Valor Recebido (R$)</label>
         <input
           required
@@ -95,7 +96,7 @@ const ProdutorRural = () => {
           />
         </div>
         <div className="boxsenar">
-          <label className="name">SENAR 2% = </label>
+          <label className="name">SENAR 2%  (R$)  = </label>
           <input
             disabled
             placeholder="R$ 0,00"
@@ -118,7 +119,7 @@ const ProdutorRural = () => {
           />
         </div>
         <div className="boxrat">
-          <label className="name">RAT 1% (R$) =</label>
+          <label className="name">RAT 1% (R$) =  </label>
           <input
             className=""
             disabled

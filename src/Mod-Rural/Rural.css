@@ -103,3 +103,6 @@ border-color: red;
 .boxinss >input{
     padding:1px
 }
+ button{
+    background-color: aquamarine;
+ }
